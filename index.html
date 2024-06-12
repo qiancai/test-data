@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ECharts Demo</title>
+    <!-- 引入 ECharts -->
+    <script src="https://cdn.jsdelivr.net/npm/echarts/dist/echarts.min.js"></script>
+</head>
+<h1>My Data Report<h1>
+<body>
+    <!-- 为 ECharts 准备一个 DOM 容器 -->
+    <div id="main" style="width: 600px;height:400px;"></div>
+    <script>
+        // 基于准备好的 DOM，初始化 echarts 实例
+        var myChart = echarts.init(document.getElementById('main'));
+
+        // 指定图表的配置项和数据
+        var option = {
+            title: {
+                text: 'Sample data'
+            },
+            tooltip: {},
+            xAxis: {
+                data: ['type1', 'type2', 'type3', 'type4', 'type5', 'type6']
+            },
+            yAxis: {},
+            series: [{
+                name: '销量',
+                type: 'bar',
+                data: [5, 20, 36, 10, 10, 20]
+            }]
+        };
+
+        // 使用刚指定的配置项和数据显示图表。
+        myChart.setOption(option);
+    </script>
+</body>
+</html>
